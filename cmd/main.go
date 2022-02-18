@@ -1,12 +1,13 @@
 package main
 
 import (
+	"log"
+	"net/http"
+
 	"github.com/gorilla/mux"
 	"github.com/guil95/poke-concurrency/internal"
 	"github.com/guil95/poke-concurrency/internal/client"
 	"github.com/guil95/poke-concurrency/internal/server"
-	"log"
-	"net/http"
 )
 
 func main()  {

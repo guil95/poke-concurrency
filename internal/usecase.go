@@ -39,10 +39,10 @@ func (uc *UseCase) GetPokemons(total int, method string) ([]*Pokemon, error) {
 		return uc.async(pokemons), nil
 	}
 
-	return uc.syncrono(pokemons), nil
+	return uc.synchronous(pokemons), nil
 }
 
-func (uc *UseCase) syncrono(pokemons []*Pokemon) []*Pokemon {
+func (uc *UseCase) synchronous(pokemons []*Pokemon) []*Pokemon {
 	for _, p := range pokemons {
 		pokemonInfo, _ := uc.Client.GetPokemonInfo(p.Url)
 		p.Image = pokemonInfo.Sprites.FrontDefault
