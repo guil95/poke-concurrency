@@ -32,6 +32,7 @@ func (s *Server) listPokemons(w http.ResponseWriter, r *http.Request) {
 	}
 
 	pokemons, _ := s.uc.GetPokemons(totalInt, params["method"])
-
+	
+	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(pokemons)
 }
